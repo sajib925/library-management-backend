@@ -7,8 +7,8 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const app_1 = __importDefault(require("./app"));
 dotenv_1.default.config();
-const PORT = process.env.PORT || 3000;
-const MONGO_URI = process.env.MONGO_URI || "mongodb://127.0.0.1:27017/library";
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.DB_URL;
 mongoose_1.default
     .connect(MONGO_URI)
     .then(() => {

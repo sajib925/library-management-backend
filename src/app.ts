@@ -8,8 +8,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Library Management API is running");
+});
+
 app.use("/api", bookRoutes);
 app.use("/api", borrowRoutes);
+
 
 app.use(errorHandler);
 
