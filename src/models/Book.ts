@@ -9,6 +9,7 @@ export interface IBook extends Document {
   copies: number;
   available: boolean;
   markUnavailableIfNone(): Promise<void>;
+  
 }
 
 const bookSchema = new Schema<IBook>(
