@@ -8,8 +8,8 @@ export interface IBook extends Document {
   description?: string;
   copies: number;
   available: boolean;
+  image?: string; 
   markUnavailableIfNone(): Promise<void>;
-  
 }
 
 const bookSchema = new Schema<IBook>(
@@ -25,6 +25,7 @@ const bookSchema = new Schema<IBook>(
     description: { type: String },
     copies: { type: Number, required: true, min: [0, "Copies must be a positive number"] },
     available: { type: Boolean, default: true },
+    image: { type: String }, 
   },
   { timestamps: true }
 );

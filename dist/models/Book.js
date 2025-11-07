@@ -46,6 +46,7 @@ const bookSchema = new mongoose_1.Schema({
     description: { type: String },
     copies: { type: Number, required: true, min: [0, "Copies must be a positive number"] },
     available: { type: Boolean, default: true },
+    image: { type: String },
 }, { timestamps: true });
 // Instance Method
 bookSchema.methods.markUnavailableIfNone = async function () {
